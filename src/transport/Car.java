@@ -14,14 +14,12 @@ public class Car extends Transport {
     private Insurance insurance;
 
 
-
     private static class Key {
-
-
+        String key;
     }
 
     private static class Insurance {
-
+        String insurance;
     }
 
     public Car(String brand,
@@ -39,7 +37,7 @@ public class Car extends Transport {
                boolean summerTyres,
                Key key,
                Insurance insurance) {
-        super(brand, model, productionYear, country, color, maxSpeed, fuel,percentageFuel);
+        super(brand, model, productionYear, country, color, maxSpeed, fuel, percentageFuel);
         this.gear = gear;
         this.body = body;
         this.number = number;
@@ -64,7 +62,6 @@ public class Car extends Transport {
     public void setInsurance(Insurance insurance) {
         this.insurance = insurance;
     }
-
 
 
     public String getGear() {
@@ -106,9 +103,10 @@ public class Car extends Transport {
     public void setSummerTyres(boolean summerTyres) {
         this.summerTyres = summerTyres;
     }
+
     @Override
     public void refill() {
-        System.out.println("Автомобиль заправлен топливом "+getFuel());
+        System.out.println("Автомобиль заправлен топливом " + getFuel());
         setPercentageFuel(100);
     }
 }
